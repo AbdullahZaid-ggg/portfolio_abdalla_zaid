@@ -6,8 +6,8 @@ const portfolioData = {
     headlineAr: "مبرمج Full-Stack وطالب علوم حاسوب",
     tagline: "I build elegant, accessible digital experiences. Passionate about problem-solving, Linux, and speedcubing.",
     taglineAr: "أبني تجارب رقمية أنيقة وسهلة الوصول. شغوف بحل المشكلات، بيئات Linux، وحل المكعبات السريعة.",
-    bio: "أنا مبرمج Full-Stack شغوف ببناء تطبيقات الويب وحل المشكلات البرمجية المعقدة. أمتلك خلفية تقنية قوية في علوم الحاسوب والفيزياء والإلكترونيات. متميز في العمل على بيئات Linux، وأعشق التحديات الذهنية وسرعة الإنجاز سواء في الأكواد أو في مسابقات حل المكعبات السريعة. أكملت دورة PreTech ودورة Dr. Angela Yu's Full-Stack Web Development Bootcamp على Udemy.",
-    bioEn: "I'm a Full-Stack developer passionate about building web applications and solving complex programming problems. I have a strong technical background in Computer Science, Physics, and Electronics. I specialize in Linux environments and thrive on mental challenges and fast execution — whether in code or speedcubing competitions. I completed the PreTech course and Dr. Angela Yu's Full-Stack Web Development Bootcamp on Udemy.",
+    bio: "أنا مبرمج Full-Stack شغوف ببناء تطبيقات الويب وحل المشكلات البرمجية المعقدة. أمتلك خلفية تقنية قوية في علوم الحاسوب والفيزياء والإلكترونيات. متميز في العمل على بيئات Linux، وأعشق التحديات الذهنية وسرعة الإنجاز سواء في الأكواد أو في مسابقات حل المكعبات السريعة. أكملت برنامج مسار (Masar) ودورة Dr. Angela Yu's Full-Stack Web Development Bootcamp على Udemy.",
+    bioEn: "I'm a Full-Stack developer passionate about building web applications and solving complex programming problems. I have a strong technical background in Computer Science, Physics, and Electronics. I specialize in Linux environments and thrive on mental challenges and fast execution — whether in code or speedcubing competitions. I completed the Masar program (PreTech) and Dr. Angela Yu's Full-Stack Web Development Bootcamp on Udemy.",
     avatar: "/avatar.jpeg",
     resumeUrl: "#",
     location: "Kfar Qari, Israel",
@@ -72,8 +72,8 @@ const portfolioData = {
     {
       title: "Tatawo3 65x",
       titleAr: "تطوع65x",
-      description: "منصة تفاعلية لكل من يريد التطوع في منطقة وادي عارة، تهدف إلى ربط المتطوعين بمراكز التطوع والفرص التطوعية. توفر قاعدة بيانات محدثة لأكثر من 48 مركزاً تطوعياً مع البحث والتصفية حسب المنطقة والفئة، خريطة تفاعلية، المفضلة، وصفحة فعاليات.",
-      descriptionEn: "An interactive volunteer platform connecting volunteers with 48+ volunteer centers in the Wadi Ara region. Features include search and filter by region/category, interactive map (Leaflet + OpenStreetMap), bookmarks, events page, and a fully bilingual Arabic/Hebrew interface.",
+      description: "منصة تفاعلية لكل من يريد التطوع في منطقة وادي عارة، تم تطويرها كجزء من برنامج مسار (Masar). تهدف إلى ربط المتطوعين بمراكز التطوع والفرص التطوعية. توفر قاعدة بيانات محدثة لأكثر من 48 مركزاً تطوعياً مع البحث والتصفية حسب المنطقة والفئة، خريطة تفاعلية، المفضلة، وصفحة فعاليات.",
+      descriptionEn: "An interactive volunteer platform developed as part of the Masar program, connecting volunteers with 48+ volunteer centers in the Wadi Ara region. Features include search and filter by region/category, interactive map (Leaflet + OpenStreetMap), bookmarks, events page, and a fully bilingual Arabic/Hebrew interface.",
       image: "https://picsum.photos/seed/tatawo3/600/400",
       tags: ["React", "Vite", "React Router 6", "Leaflet", "OpenStreetMap", "localStorage", "RTL", "CSS3", "PWA"],
       features: [
@@ -93,7 +93,7 @@ const portfolioData = {
   experience: [
     {
       role: "Full-Stack Developer (Trainee)",
-      company: "PreTech Program - Masar",
+      company: "Masar Program (PreTech)",
       location: "Remote",
       period: "2025 - 2026",
       highlights: [
