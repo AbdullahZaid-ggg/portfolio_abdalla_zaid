@@ -7,8 +7,18 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const subject = form.subject.value || "Portfolio Contact";
+    const message = form.message.value;
+
+    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    window.location.href = `mailto:${portfolioData.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     setSent(true);
     setTimeout(() => setSent(false), 3000);
+    form.reset();
   };
 
   return (
@@ -83,6 +93,7 @@ export default function Contact() {
                 <label className="block text-sm font-medium text-on-surface-variant mb-1.5">Name</label>
                 <input
                   type="text"
+                  name="name"
                   required
                   className="w-full px-4 py-3 rounded-md3-md bg-surface-variant text-on-surface border-2 border-transparent focus:border-primary outline-none transition-colors"
                   placeholder="Your name"
@@ -92,6 +103,7 @@ export default function Contact() {
                 <label className="block text-sm font-medium text-on-surface-variant mb-1.5">Email</label>
                 <input
                   type="email"
+                  name="email"
                   required
                   className="w-full px-4 py-3 rounded-md3-md bg-surface-variant text-on-surface border-2 border-transparent focus:border-primary outline-none transition-colors"
                   placeholder="your@email.com"
@@ -102,6 +114,7 @@ export default function Contact() {
               <label className="block text-sm font-medium text-on-surface-variant mb-1.5">Subject</label>
               <input
                 type="text"
+                name="subject"
                 className="w-full px-4 py-3 rounded-md3-md bg-surface-variant text-on-surface border-2 border-transparent focus:border-primary outline-none transition-colors"
                 placeholder="What's this about?"
               />
@@ -110,6 +123,7 @@ export default function Contact() {
               <label className="block text-sm font-medium text-on-surface-variant mb-1.5">Message</label>
               <textarea
                 rows={5}
+                name="message"
                 required
                 className="w-full px-4 py-3 rounded-md3-md bg-surface-variant text-on-surface border-2 border-transparent focus:border-primary outline-none transition-colors resize-none"
                 placeholder="Your message..."
