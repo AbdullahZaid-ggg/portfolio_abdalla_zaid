@@ -15,16 +15,17 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-surface/90 backdrop-blur-lg shadow-md3-1"
+          ? "bg-background/80 backdrop-blur-lg border-b border-outline/20 shadow-md3-1"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
         <a
           href="#hero"
-          className="text-xl font-display font-bold text-primary"
+          className="text-lg font-mono font-bold text-primary"
         >
-          {portfolioData.personal.name}
+          <span className="text-terminal-green">&gt;</span> {portfolioData.personal.name.split(" ")[0]}
+          <span className="text-on-surface-variant">_</span>
         </a>
 
         <div className="hidden md:flex items-center gap-1">
@@ -32,15 +33,15 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="px-4 py-2 rounded-md3-sm text-sm font-medium text-on-surface-variant hover:bg-surface-variant hover:text-primary transition-colors"
+              className="px-4 py-2 rounded-md3-sm text-sm font-mono text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-colors"
             >
-              {item.label}
+              <span className="text-primary/50"># </span>{item.label.toLowerCase()}
             </a>
           ))}
         </div>
 
         <button
-          className="md:hidden p-2 rounded-md3-sm text-on-surface-variant hover:bg-surface-variant"
+          className="md:hidden p-2 rounded-md3-sm text-on-surface-variant hover:bg-primary/10"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -55,16 +56,16 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-surface border-t border-surface-variant animate-fade-in">
+        <div className="md:hidden bg-surface border-t border-outline/20 animate-fade-in">
           <div className="px-4 py-3 space-y-1">
             {portfolioData.nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="block px-4 py-3 rounded-md3-sm text-sm font-medium text-on-surface-variant hover:bg-surface-variant hover:text-primary transition-colors"
+                className="block px-4 py-3 rounded-md3-sm text-sm font-mono text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-colors"
               >
-                {item.label}
+                <span className="text-primary/50"># </span>{item.label.toLowerCase()}
               </a>
             ))}
           </div>

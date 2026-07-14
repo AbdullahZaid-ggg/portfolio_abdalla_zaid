@@ -8,11 +8,21 @@
   }
 
   body {
-    @apply bg-background text-on-background font-body antialiased;
+    @apply bg-background text-on-background font-mono antialiased;
   }
 
   ::selection {
-    @apply bg-primary-container text-on-primary-container;
+    @apply bg-primary/30 text-neon-cyan;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-variant rounded-full;
   }
 }
 
@@ -26,42 +36,65 @@
   }
 
   .md3-card {
-    @apply bg-surface text-on-surface rounded-md3-lg shadow-md3-2 transition-shadow duration-300;
+    @apply bg-surface/80 backdrop-blur-sm text-on-surface rounded-md3-lg shadow-md3-2 border border-outline/20 transition-all duration-300;
   }
 
   .md3-card:hover {
-    @apply shadow-md3-4;
+    @apply shadow-glow border-primary/30;
   }
 
   .md3-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-md3-lg px-6 py-3 font-medium text-sm tracking-wide transition-all duration-200;
+    @apply inline-flex items-center justify-center gap-2 rounded-md3-lg px-6 py-3 font-mono text-sm tracking-wide transition-all duration-200;
   }
 
   .md3-button-filled {
-    @apply md3-button bg-primary text-on-primary shadow-md3-1 hover:shadow-md3-2 active:shadow-md3-1;
+    @apply md3-button bg-primary text-on-primary shadow-md3-1 hover:shadow-glow hover:bg-primary/90 active:shadow-md3-1;
   }
 
   .md3-button-outlined {
-    @apply md3-button border-2 border-outline text-primary bg-transparent hover:bg-primary-container;
+    @apply md3-button border-2 border-primary/50 text-primary bg-transparent hover:bg-primary/10 hover:border-primary;
   }
 
   .md3-button-text {
-    @apply md3-button text-primary bg-transparent hover:bg-primary-container;
+    @apply md3-button text-primary bg-transparent hover:bg-primary/10;
   }
 
   .md3-chip {
-    @apply inline-flex items-center gap-2 rounded-md3-sm px-3 py-1.5 text-xs font-medium bg-surface-variant text-on-surface-variant;
+    @apply inline-flex items-center gap-2 rounded-md3-sm px-3 py-1.5 text-xs font-mono bg-surface-variant text-on-surface-variant border border-outline/20;
   }
 
   .section-heading {
-    @apply text-3xl md:text-4xl font-display font-bold text-primary mb-2;
+    @apply text-3xl md:text-4xl font-mono font-bold text-primary mb-2;
   }
 
   .section-subheading {
-    @apply text-lg text-on-surface-variant font-body mb-8;
+    @apply text-lg text-on-surface-variant font-mono mb-8;
   }
 
   .section-padding {
     @apply px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24;
+  }
+
+  .terminal-window {
+    @apply bg-[#0a0d14] border border-outline/30 rounded-md3-md overflow-hidden shadow-md3-2;
+  }
+
+  .terminal-header {
+    @apply flex items-center gap-2 px-4 py-2.5 bg-[#0f1219] border-b border-outline/20;
+  }
+
+  .terminal-dot {
+    @apply w-3 h-3 rounded-full;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(0, 212, 170, 0.5);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(0, 212, 170, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
   }
 }

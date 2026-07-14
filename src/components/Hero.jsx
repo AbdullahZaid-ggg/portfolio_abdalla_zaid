@@ -1,47 +1,77 @@
+import { useState, useEffect } from "react";
 import portfolioData from "../data/portfolioData";
+
+const taglines = [
+  "console.log(\"Hello, World!\");",
+  "while(1) { code(); }",
+  "sudo apt-get install success",
+  "404: Sleep not found",
+  "git commit -m \"fixed everything\"",
+];
 
 export default function Hero() {
   const { personal } = portfolioData;
+  const [tagIndex, setTagIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTagIndex((prev) => (prev + 1) % taglines.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center section-padding pt-20"
+      className="relative min-h-screen flex items-center justify-center section-padding pt-20 overflow-hidden grid-bg"
     >
-      <div className="max-w-4xl mx-auto text-center animate-fade-in">
-        <div className="mb-8 inline-block">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
+
+      <div className="relative z-10 max-w-4xl mx-auto text-center animate-fade-in">
+        <div className="mb-8 inline-block relative">
+          <div className="absolute inset-0 rounded-md3-xl bg-primary/20 blur-xl animate-pulse" />
           <img
             src={personal.avatar}
             alt={personal.name}
-            className="w-28 h-28 rounded-md3-xl object-cover shadow-md3-3 mx-auto ring-4 ring-primary-container"
+            className="relative w-28 h-28 rounded-md3-xl object-cover shadow-md3-3 mx-auto ring-2 ring-primary/50"
           />
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-on-background mb-4 leading-tight">
-          {personal.headline}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md3-full bg-primary/10 border border-primary/30 text-primary text-xs font-mono mb-6">
+          <span className="w-2 h-2 rounded-full bg-terminal-green animate-blink" />
+          <span className="text-on-surface-variant">System: </span>
+          <span className="glow-text">{personal.headline}</span>
+        </div>
+
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-mono font-bold text-on-background mb-4 leading-tight">
+          <span className="text-primary glow-text">{"> "}</span>
+          {personal.name}
+          <span className="inline-block w-2 h-8 bg-primary animate-blink ml-1 align-middle" />
         </h1>
 
-        <p className="text-xl sm:text-2xl text-primary font-display font-medium mb-4">
-          {personal.name}
-        </p>
-
-        <p className="text-sm text-on-surface-variant mb-2 font-arabic">
+        <p className="text-sm text-on-surface-variant mb-2 font-mono">
+          <span className="text-terminal-green">// </span>
           {personal.nameAr} &middot; {personal.headlineAr}
         </p>
 
-        <p className="text-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
-          {personal.tagline}
-        </p>
+        <div className="h-8 mb-10">
+          <span className="text-lg text-on-surface-variant font-mono transition-all duration-500">
+            <span className="text-primary">$ </span>
+            <span key={tagIndex} className="animate-fade-in">
+              {taglines[tagIndex]}
+            </span>
+          </span>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-4">
           <a href={personal.resumeUrl} className="md3-button-filled">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
-            Download Resume
+            <span className="text-on-primary">./download_resume</span>
           </a>
           <a href="#projects" className="md3-button-outlined">
-            View Projects
+            <span>$ </span>view_projects
           </a>
         </div>
 
@@ -52,7 +82,7 @@ export default function Hero() {
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-md3-lg bg-surface-variant/50 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all"
+              className="w-12 h-12 rounded-md3-lg bg-surface/50 backdrop-blur-sm border border-outline/20 flex items-center justify-center text-on-surface-variant hover:bg-primary/20 hover:text-primary hover:border-primary/50 transition-all"
               aria-label={s.name}
             >
               {s.icon === "github" && (

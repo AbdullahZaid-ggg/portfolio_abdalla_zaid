@@ -7,10 +7,14 @@ import Experience from "./components/Experience";
 import Interests from "./components/Interests";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import MatrixRain from "./components/MatrixRain";
+import TerminalDecor from "./components/TerminalDecor";
 
 export default function App() {
   return (
     <>
+      <MatrixRain />
+      <TerminalDecor />
       <Navbar />
       <main>
         <Hero />

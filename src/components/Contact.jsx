@@ -22,37 +22,46 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding py-20 md:py-28">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="section-heading">Get in Touch</h2>
-        <p className="section-subheading">Let's work together</p>
+    <section id="contact" className="section-padding py-20 md:py-28 relative">
+      <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
+      <div className="max-w-4xl mx-auto relative z-10">
+        <h2 className="section-heading">
+          <span className="text-terminal-green">$ </span>contact
+        </h2>
+        <p className="section-subheading">
+          <span className="text-on-surface-variant">// </span>تواصل معي
+        </p>
 
         <div className="grid md:grid-cols-5 gap-10">
           <div className="md:col-span-2 space-y-6">
-            <div className="space-y-5">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-md3-lg bg-primary-container flex items-center justify-center text-primary shrink-0">
+            <div className="space-y-4">
+              <div className="flex items-center gap-4 p-4 rounded-md3-md bg-surface/50 border border-outline/10 hover:border-primary/30 transition-all">
+                <div className="w-12 h-12 rounded-md3-lg bg-primary/10 border border-primary/30 flex items-center justify-center text-primary shrink-0">
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-on-surface-variant">Email</p>
-                  <a href={`mailto:${contact.email}`} className="text-on-surface text-base hover:text-primary transition-colors">
+                  <p className="text-xs font-mono text-on-surface-variant">
+                    <span className="text-primary">$</span> email
+                  </p>
+                  <a href={`mailto:${contact.email}`} className="text-on-surface text-sm font-mono hover:text-primary transition-colors">
                     {contact.email}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-md3-lg bg-secondary-container flex items-center justify-center text-secondary shrink-0">
+              <div className="flex items-center gap-4 p-4 rounded-md3-md bg-surface/50 border border-outline/10 hover:border-secondary/30 transition-all">
+                <div className="w-12 h-12 rounded-md3-lg bg-secondary/10 border border-secondary/30 flex items-center justify-center text-secondary shrink-0">
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-on-surface-variant">Location</p>
-                  <p className="text-on-surface text-base">{contact.location}</p>
+                  <p className="text-xs font-mono text-on-surface-variant">
+                    <span className="text-primary">$</span> location
+                  </p>
+                  <p className="text-on-surface text-sm font-mono">{contact.location}</p>
                 </div>
               </div>
             </div>
@@ -64,7 +73,7 @@ export default function Contact() {
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-md3-lg bg-surface-variant flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all"
+                  className="w-11 h-11 rounded-md3-lg bg-surface/50 border border-outline/20 flex items-center justify-center text-on-surface-variant hover:bg-primary/20 hover:text-primary hover:border-primary/50 transition-all"
                   aria-label={s.name}
                 >
                   {s.icon === "github" && (
@@ -90,47 +99,63 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className="md:col-span-3 space-y-5">
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-on-surface-variant mb-1.5">Name</label>
+                <label className="block text-xs font-mono text-on-surface-variant mb-1.5">
+                  <span className="text-primary">$</span> name
+                </label>
                 <input
                   type="text"
                   name="name"
                   required
-                  className="w-full px-4 py-3 rounded-md3-md bg-surface-variant text-on-surface border-2 border-transparent focus:border-primary outline-none transition-colors"
-                  placeholder="Your name"
+                  className="w-full px-4 py-3 rounded-md3-md bg-surface/50 border border-outline/20 text-on-surface font-mono text-sm focus:border-primary outline-none transition-colors"
+                  placeholder="your_name"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-on-surface-variant mb-1.5">Email</label>
+                <label className="block text-xs font-mono text-on-surface-variant mb-1.5">
+                  <span className="text-primary">$</span> email
+                </label>
                 <input
                   type="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 rounded-md3-md bg-surface-variant text-on-surface border-2 border-transparent focus:border-primary outline-none transition-colors"
+                  className="w-full px-4 py-3 rounded-md3-md bg-surface/50 border border-outline/20 text-on-surface font-mono text-sm focus:border-primary outline-none transition-colors"
                   placeholder="your@email.com"
                 />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-on-surface-variant mb-1.5">Subject</label>
+              <label className="block text-xs font-mono text-on-surface-variant mb-1.5">
+                <span className="text-primary">$</span> subject
+              </label>
               <input
                 type="text"
                 name="subject"
-                className="w-full px-4 py-3 rounded-md3-md bg-surface-variant text-on-surface border-2 border-transparent focus:border-primary outline-none transition-colors"
-                placeholder="What's this about?"
+                className="w-full px-4 py-3 rounded-md3-md bg-surface/50 border border-outline/20 text-on-surface font-mono text-sm focus:border-primary outline-none transition-colors"
+                placeholder="subject"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-on-surface-variant mb-1.5">Message</label>
+              <label className="block text-xs font-mono text-on-surface-variant mb-1.5">
+                <span className="text-primary">$</span> message
+              </label>
               <textarea
                 rows={5}
                 name="message"
                 required
-                className="w-full px-4 py-3 rounded-md3-md bg-surface-variant text-on-surface border-2 border-transparent focus:border-primary outline-none transition-colors resize-none"
-                placeholder="Your message..."
+                className="w-full px-4 py-3 rounded-md3-md bg-surface/50 border border-outline/20 text-on-surface font-mono text-sm focus:border-primary outline-none transition-colors resize-none"
+                placeholder="your_message..."
               />
             </div>
             <button type="submit" className="md3-button-filled w-full sm:w-auto">
-              {sent ? "✓ Sent!" : "Send Message"}
+              {sent ? (
+                <span className="flex items-center gap-2">
+                  <span className="text-terminal-green">✓</span> sent
+                </span>
+              ) : (
+                <span className="flex items-center gap-2">
+                  <span className="text-on-primary">$</span> send_message
+                </span>
+              )}
             </button>
           </form>
         </div>
