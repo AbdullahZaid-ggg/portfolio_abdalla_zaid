@@ -4,10 +4,10 @@ export default function Experience() {
   const { experience } = portfolioData;
 
   return (
-    <section id="experience" className="section-padding py-20 md:py-28 bg-surface-variant/30">
+    <section id="experience" className="section-padding py-20 md:py-28">
       <div className="max-w-4xl mx-auto">
         <h2 className="section-heading">Experience</h2>
-        <p className="section-subheading">Where I've worked</p>
+        <p className="section-subheading">الخبرات</p>
 
         <div className="space-y-8">
           {experience.map((exp, i) => (

@@ -7,11 +7,11 @@ export default function Projects() {
     <section id="projects" className="section-padding py-20 md:py-28">
       <div className="max-w-6xl mx-auto">
         <h2 className="section-heading">Projects</h2>
-        <p className="section-subheading">Things I've built</p>
+        <p className="section-subheading">مشاريعي</p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, i) => (
-            <div key={i} className="md3-card overflow-hidden group">
+            <div key={i} className="md3-card overflow-hidden group flex flex-col">
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
@@ -21,10 +21,14 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
-              <div className="p-5 space-y-3">
-                <h3 className="text-lg font-display font-semibold text-on-surface">
-                  {project.title}
-                </h3>
+              <div className="p-5 space-y-3 flex-1 flex flex-col">
+                <div>
+                  <h3 className="text-lg font-display font-semibold text-on-surface">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs text-on-surface-variant mt-0.5">{project.titleAr}</p>
+                </div>
+
                 <p className="text-sm text-on-surface-variant leading-relaxed">
                   {project.description}
                 </p>
@@ -35,7 +39,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex gap-3 pt-2">
+                <div className="flex gap-3 pt-2 mt-auto">
                   <a
                     href={project.liveUrl}
                     target="_blank"
