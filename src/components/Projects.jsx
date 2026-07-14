@@ -9,21 +9,21 @@ export default function Projects() {
         <h2 className="section-heading">Projects</h2>
         <p className="section-subheading">مشاريعي</p>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, i) => (
             <div key={i} className="md3-card overflow-hidden group flex flex-col">
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
-              <div className="p-5 space-y-3 flex-1 flex flex-col">
+              <div className="p-6 space-y-4 flex-1 flex flex-col">
                 <div>
-                  <h3 className="text-lg font-display font-semibold text-on-surface">
+                  <h3 className="text-xl font-display font-semibold text-on-surface">
                     {project.title}
                   </h3>
                   <p className="text-xs text-on-surface-variant mt-0.5">{project.titleAr}</p>
@@ -33,13 +33,27 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-1.5">
+                {project.features && (
+                  <div className="space-y-1.5">
+                    <p className="text-xs font-medium text-primary uppercase tracking-wider">Features</p>
+                    <ul className="space-y-1">
+                      {project.features.map((f, j) => (
+                        <li key={j} className="flex items-start gap-2 text-xs text-on-surface-variant">
+                          <span className="text-primary mt-0.5 shrink-0">▹</span>
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
                   {project.tags.map((tag) => (
                     <span key={tag} className="md3-chip">{tag}</span>
                   ))}
                 </div>
 
-                <div className="flex gap-3 pt-2 mt-auto">
+                <div className="flex gap-3 pt-2">
                   <a
                     href={project.liveUrl}
                     target="_blank"
