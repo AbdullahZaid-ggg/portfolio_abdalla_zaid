@@ -107,11 +107,15 @@ const portfolioData = {
 
   education: [
     {
-      degree: "B.Sc. in Computer Science (Expected)",
-      degreeAr: "بكالوريوس في علوم الحاسوب (متوقع)",
-      school: "University",
-      schoolAr: "الجامعة",
-      period: "Expected Oct 2026",
+      degree: "Masar Program (PreTech)",
+      degreeAr: "برنامج مسار (PreTech)",
+      school: "Edmond de Rothschild Foundation & Ministry of Education",
+      schoolAr: "شراكات إدموند دي روتشيلد ووزارة المعارف",
+      period: "2025 - 2026",
+      highlights: [
+        "Annual program for post-high school Arab youth — academic prep, high-tech training, leadership workshops, and community volunteering",
+        "Built and shipped two full-stack web projects: Z-Fahm and Tatawo3 65x",
+      ],
     },
     {
       degree: "High School Diploma - Intensive Track",
