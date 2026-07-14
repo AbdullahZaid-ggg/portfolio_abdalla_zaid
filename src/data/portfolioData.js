@@ -67,7 +67,7 @@ const portfolioData = {
         "PWA / offline support with service worker",
       ],
       liveUrl: "#",
-      repoUrl: "#",
+      repoUrl: "https://github.com/AbdullahZaid-ggg/abdalla-preTech-graduate",
     },
     {
       title: "Tatawo3 65x",
@@ -86,7 +86,7 @@ const portfolioData = {
         "Open source — contributions welcome",
       ],
       liveUrl: "#",
-      repoUrl: "#",
+      repoUrl: "https://github.com/AbdullahZaid-ggg/MasarEndProgram2526",
     },
   ],
 
