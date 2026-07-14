@@ -9,7 +9,7 @@ const portfolioData = {
     bio: "أنا مبرمج Full-Stack شغوف ببناء تطبيقات الويب وحل المشكلات البرمجية المعقدة. أمتلك خلفية تقنية قوية في علوم الحاسوب والفيزياء والإلكترونيات. متميز في العمل على بيئات Linux، وأعشق التحديات الذهنية وسرعة الإنجاز سواء في الأكواد أو في مسابقات حل المكعبات السريعة. أكملت برنامج مسار (Masar) ودورة Dr. Angela Yu's Full-Stack Web Development Bootcamp على Udemy.",
     bioEn: "I'm a Full-Stack developer passionate about building web applications and solving complex programming problems. I have a strong technical background in Computer Science, Physics, and Electronics. I specialize in Linux environments and thrive on mental challenges and fast execution — whether in code or speedcubing competitions. I completed the Masar program (PreTech) and Dr. Angela Yu's Full-Stack Web Development Bootcamp on Udemy.",
     avatar: "/avatar.jpeg",
-    resumeUrl: "#",
+    resumeUrl: "/HAAT_CV.pdf",
     location: "Kfar Qari, Israel",
     email: "abdallazeed3@gmail.com",
   },
