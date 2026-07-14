@@ -8,7 +8,7 @@ const portfolioData = {
     taglineAr: "أبني تجارب رقمية أنيقة وسهلة الوصول. شغوف بحل المشكلات، بيئات Linux، وحل المكعبات السريعة.",
     bio: "أنا مبرمج Full-Stack شغوف ببناء تطبيقات الويب وحل المشكلات البرمجية المعقدة. أمتلك خلفية تقنية قوية في علوم الحاسوب والفيزياء، ومقبل على بدء دراستي الأكاديمية في معهد التخنيون. متميز في العمل على بيئات Linux، وأعشق التحديات الذهنية وسرعة الإنجاز سواء في الأكواد أو في مسابقات حل المكعبات السريعة.",
     bioEn: "I'm a Full-Stack developer passionate about building web applications and solving complex programming problems. I have a strong technical background in Computer Science and Physics, and I'm about to begin my academic studies at the Technion. I specialize in Linux environments and thrive on mental challenges and fast execution — whether in code or speedcubing competitions.",
-    avatar: "https://api.dicebear.com/7.x/initials/svg?seed=AZ&backgroundColor=6750A4&textColor=ffffff",
+    avatar: "/avatar.jpeg",
     resumeUrl: "#",
     location: "Israel",
     email: "abdallazeed3@gmail.com",
