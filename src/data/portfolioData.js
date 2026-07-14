@@ -6,8 +6,8 @@ const portfolioData = {
     headlineAr: "مبرمج Full-Stack وطالب علوم حاسوب",
     tagline: "I build elegant, accessible digital experiences. Passionate about problem-solving, Linux, and speedcubing.",
     taglineAr: "أبني تجارب رقمية أنيقة وسهلة الوصول. شغوف بحل المشكلات، بيئات Linux، وحل المكعبات السريعة.",
-    bio: "أنا مبرمج Full-Stack شغوف ببناء تطبيقات الويب وحل المشكلات البرمجية المعقدة. أمتلك خلفية تقنية قوية في علوم الحاسوب والفيزياء والإلكترونيات، ومقبل على بدء دراستي الأكاديمية في معهد التخنيون. متميز في العمل على بيئات Linux، وأعشق التحديات الذهنية وسرعة الإنجاز سواء في الأكواد أو في مسابقات حل المكعبات السريعة. أكملت دورة PreTech ودورة Dr. Angela Yu's Full-Stack Web Development Bootcamp على Udemy.",
-    bioEn: "I'm a Full-Stack developer passionate about building web applications and solving complex programming problems. I have a strong technical background in Computer Science, Physics, and Electronics, and I'm about to begin my academic studies at the Technion. I specialize in Linux environments and thrive on mental challenges and fast execution — whether in code or speedcubing competitions. I completed the PreTech course and Dr. Angela Yu's Full-Stack Web Development Bootcamp on Udemy.",
+    bio: "أنا مبرمج Full-Stack شغوف ببناء تطبيقات الويب وحل المشكلات البرمجية المعقدة. أمتلك خلفية تقنية قوية في علوم الحاسوب والفيزياء والإلكترونيات. متميز في العمل على بيئات Linux، وأعشق التحديات الذهنية وسرعة الإنجاز سواء في الأكواد أو في مسابقات حل المكعبات السريعة. أكملت دورة PreTech ودورة Dr. Angela Yu's Full-Stack Web Development Bootcamp على Udemy.",
+    bioEn: "I'm a Full-Stack developer passionate about building web applications and solving complex programming problems. I have a strong technical background in Computer Science, Physics, and Electronics. I specialize in Linux environments and thrive on mental challenges and fast execution — whether in code or speedcubing competitions. I completed the PreTech course and Dr. Angela Yu's Full-Stack Web Development Bootcamp on Udemy.",
     avatar: "/avatar.jpeg",
     resumeUrl: "#",
     location: "Kfar Qari, Israel",
@@ -109,9 +109,9 @@ const portfolioData = {
     {
       degree: "B.Sc. in Computer Science (Expected)",
       degreeAr: "بكالوريوس في علوم الحاسوب (متوقع)",
-      school: "Technion - Israel Institute of Technology",
-      schoolAr: "معهد التخنيون للتكنولوجيا",
-      period: "Oct 2026 - Present",
+      school: "University",
+      schoolAr: "الجامعة",
+      period: "Expected Oct 2026",
     },
     {
       degree: "High School Diploma - Intensive Track",
