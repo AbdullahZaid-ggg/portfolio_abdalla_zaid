@@ -37,7 +37,7 @@ export default function TerminalWindow() {
 
   return (
     <div
-      className="fixed bottom-24 right-6 left-6 sm:left-auto sm:w-[26rem] z-0 pointer-events-none select-none animate-drift-slow"
+      className="fixed bottom-24 right-6 left-6 sm:left-auto sm:w-[26rem] z-0 pointer-events-none select-none"
       aria-hidden="true"
     >
       <div className="rounded-lg border border-outline/50 bg-background/60 backdrop-blur-md shadow-2xl shadow-black/40 overflow-hidden">
