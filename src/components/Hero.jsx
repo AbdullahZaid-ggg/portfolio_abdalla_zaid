@@ -1,78 +1,53 @@
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import portfolioData from "../data/portfolioData";
-
-const taglines = [
-  "console.log(\"Hello, World!\");",
-  "while(1) { code(); }",
-  "sudo apt-get install success",
-  "404: Sleep not found",
-  "git commit -m \"fixed everything\"",
-];
 
 export default function Hero() {
   const { personal } = portfolioData;
-  const [tagIndex, setTagIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTagIndex((prev) => (prev + 1) % taglines.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center section-padding pt-20 overflow-hidden grid-bg"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
+      <div className="glow-orb w-[480px] h-[480px] bg-primary/15 -top-32 -left-32 animate-float-slow" />
+      <div className="glow-orb w-[400px] h-[400px] bg-secondary/10 bottom-0 right-0 animate-float" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center animate-fade-in">
         <div className="mb-8 inline-block relative">
-          <div className="absolute inset-0 rounded-md3-xl bg-primary/20 blur-xl animate-pulse" />
+          <div className="absolute inset-0 rounded-md3-xl bg-gradient-to-br from-primary via-tertiary to-secondary blur-2xl opacity-40 animate-glow-pulse" />
           <img
             src={personal.avatar}
-            alt={personal.name}
-            className="relative w-28 h-28 rounded-md3-xl object-cover shadow-md3-3 mx-auto ring-2 ring-primary/50"
+            alt={personal.shortName}
+            className="relative w-32 h-32 rounded-md3-xl object-cover ring-2 ring-primary/40"
           />
         </div>
 
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md3-full bg-primary/10 border border-primary/30 text-primary text-xs font-mono mb-6">
-          <span className="w-2 h-2 rounded-full bg-terminal-green animate-blink" />
-          <span className="text-on-surface-variant">System: </span>
-          <span className="glow-text">{personal.headline}</span>
-        </div>
-
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-mono font-bold text-on-background mb-4 leading-tight">
-          <span className="text-primary glow-text">{"> "}</span>
-          {personal.name}
-          <span className="inline-block w-2 h-8 bg-primary animate-blink ml-1 align-middle" />
-        </h1>
-
-        <p className="text-sm text-on-surface-variant mb-2 font-mono">
-          <span className="text-terminal-green">// </span>
-          {personal.nameAr} &middot; {personal.headlineAr}
+        <p className="text-sm font-mono text-primary-strong uppercase tracking-widest mb-4">
+          Hello, my name is
         </p>
 
-        <div className="h-8 mb-10">
-          <span className="text-lg text-on-surface-variant font-mono transition-all duration-500">
-            <span className="text-primary">$ </span>
-            <span key={tagIndex} className="animate-fade-in">
-              {taglines[tagIndex]}
-            </span>
-          </span>
-        </div>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-4 leading-tight">
+          {personal.shortName}
+        </h1>
+
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-on-surface-variant mb-6">
+          <span className="text-gradient">{personal.headline}</span>
+        </h2>
+
+        <p className="max-w-2xl mx-auto text-base md:text-lg text-on-surface-variant mb-10 leading-relaxed">
+          {personal.tagline}
+        </p>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <a href={personal.resumeUrl} className="md3-button-filled">
+          <a href={personal.resumeUrl} className="btn-filled">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
-            <span className="text-on-primary">./HAAT_CV.pdf</span>
+            Tech CV
           </a>
-          <a href="#projects" className="md3-button-outlined">
-            <span>$ </span>view_projects
-          </a>
+          <Link to="/projects" className="btn-outlined">
+            View Projects
+          </Link>
         </div>
 
         <div className="flex justify-center gap-3 mt-12">
@@ -82,7 +57,7 @@ export default function Hero() {
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-md3-lg bg-surface/50 backdrop-blur-sm border border-outline/20 flex items-center justify-center text-on-surface-variant hover:bg-primary/20 hover:text-primary hover:border-primary/50 transition-all"
+              className="w-12 h-12 rounded-md3-lg bg-surface border border-outline flex items-center justify-center text-on-surface-variant hover:text-primary-strong hover:border-primary/60 hover:shadow-glow transition-all"
               aria-label={s.name}
             >
               {s.icon === "github" && (

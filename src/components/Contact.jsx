@@ -1,9 +1,21 @@
 import { useState } from "react";
 import portfolioData from "../data/portfolioData";
+import Reveal from "./Reveal";
 
 export default function Contact() {
   const { contact, social } = portfolioData;
   const [sent, setSent] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(contact.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // ignore clipboard errors
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,45 +35,51 @@ export default function Contact() {
 
   return (
     <section id="contact" className="section-padding py-20 md:py-28 relative">
-      <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
       <div className="max-w-4xl mx-auto relative z-10">
-        <h2 className="section-heading">
-          <span className="text-terminal-green">$ </span>contact
-        </h2>
-        <p className="section-subheading">
-          <span className="text-on-surface-variant">// </span>تواصل معي
-        </p>
+        <Reveal>
+          <div className="section-label">06. Contact</div>
+        </Reveal>
 
         <div className="grid md:grid-cols-5 gap-10">
-          <div className="md:col-span-2 space-y-6">
+          <Reveal delay={100} className="md:col-span-2 space-y-6">
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 rounded-md3-md bg-surface/50 border border-outline/10 hover:border-primary/30 transition-all">
-                <div className="w-12 h-12 rounded-md3-lg bg-primary/10 border border-primary/30 flex items-center justify-center text-primary shrink-0">
+              <div className="card-hover p-4 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-md3-lg bg-primary/10 border border-primary/30 flex items-center justify-center text-primary-strong shrink-0">
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs font-mono text-on-surface-variant">
-                    <span className="text-primary">$</span> email
-                  </p>
-                  <a href={`mailto:${contact.email}`} className="text-on-surface text-sm font-mono hover:text-primary transition-colors">
-                    {contact.email}
-                  </a>
+                  <p className="text-xs font-medium text-on-surface-variant">Email</p>
+                  <div className="flex items-center gap-2">
+                    <a href={`mailto:${contact.email}`} className="text-on-surface text-sm font-medium hover:text-primary-strong transition-colors">
+                      {contact.email}
+                    </a>
+                    <button
+                      onClick={copyEmail}
+                      aria-label="Copy email"
+                      className={`text-xs font-mono px-2 py-0.5 rounded-md3-xs border transition-colors ${
+                        copied
+                          ? "text-success border-success/50 bg-success/10"
+                          : "text-on-surface-variant border-outline hover:text-primary-strong hover:border-primary/50"
+                      }`}
+                    >
+                      {copied ? "✓ Copied" : "Copy"}
+                    </button>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 rounded-md3-md bg-surface/50 border border-outline/10 hover:border-secondary/30 transition-all">
+              <div className="card-hover p-4 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-md3-lg bg-secondary/10 border border-secondary/30 flex items-center justify-center text-secondary shrink-0">
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs font-mono text-on-surface-variant">
-                    <span className="text-primary">$</span> location
-                  </p>
-                  <p className="text-on-surface text-sm font-mono">{contact.location}</p>
+                  <p className="text-xs font-medium text-on-surface-variant">Location</p>
+                  <p className="text-on-surface text-sm font-medium">{contact.location}</p>
                 </div>
               </div>
             </div>
@@ -73,7 +91,7 @@ export default function Contact() {
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-md3-lg bg-surface/50 border border-outline/20 flex items-center justify-center text-on-surface-variant hover:bg-primary/20 hover:text-primary hover:border-primary/50 transition-all"
+                  className="w-11 h-11 rounded-md3-lg bg-surface border border-outline flex items-center justify-center text-on-surface-variant hover:text-primary-strong hover:border-primary/60 hover:shadow-glow transition-all"
                   aria-label={s.name}
                 >
                   {s.icon === "github" && (
@@ -94,67 +112,57 @@ export default function Contact() {
                 </a>
               ))}
             </div>
-          </div>
+          </Reveal>
 
           <form onSubmit={handleSubmit} className="md:col-span-3 space-y-5">
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-mono text-on-surface-variant mb-1.5">
-                  <span className="text-primary">$</span> name
-                </label>
+                <label className="block text-xs font-medium text-on-surface-variant mb-1.5">Name</label>
                 <input
                   type="text"
                   name="name"
                   required
-                  className="w-full px-4 py-3 rounded-md3-md bg-surface/50 border border-outline/20 text-on-surface font-mono text-sm focus:border-primary outline-none transition-colors"
-                  placeholder="your_name"
+                  className="w-full px-4 py-3 rounded-md3-md bg-surface border border-outline text-on-surface text-sm focus:border-primary outline-none transition-colors"
+                  placeholder="Your name"
                 />
               </div>
               <div>
-                <label className="block text-xs font-mono text-on-surface-variant mb-1.5">
-                  <span className="text-primary">$</span> email
-                </label>
+                <label className="block text-xs font-medium text-on-surface-variant mb-1.5">Email</label>
                 <input
                   type="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 rounded-md3-md bg-surface/50 border border-outline/20 text-on-surface font-mono text-sm focus:border-primary outline-none transition-colors"
-                  placeholder="your@email.com"
+                  className="w-full px-4 py-3 rounded-md3-md bg-surface border border-outline text-on-surface text-sm focus:border-primary outline-none transition-colors"
+                  placeholder="you@email.com"
                 />
               </div>
             </div>
             <div>
-              <label className="block text-xs font-mono text-on-surface-variant mb-1.5">
-                <span className="text-primary">$</span> subject
-              </label>
+              <label className="block text-xs font-medium text-on-surface-variant mb-1.5">Subject</label>
               <input
                 type="text"
                 name="subject"
-                className="w-full px-4 py-3 rounded-md3-md bg-surface/50 border border-outline/20 text-on-surface font-mono text-sm focus:border-primary outline-none transition-colors"
-                placeholder="subject"
+                className="w-full px-4 py-3 rounded-md3-md bg-surface border border-outline text-on-surface text-sm focus:border-primary outline-none transition-colors"
+                placeholder="Subject"
               />
             </div>
             <div>
-              <label className="block text-xs font-mono text-on-surface-variant mb-1.5">
-                <span className="text-primary">$</span> message
-              </label>
+              <label className="block text-xs font-medium text-on-surface-variant mb-1.5">Message</label>
               <textarea
                 rows={5}
                 name="message"
                 required
-                className="w-full px-4 py-3 rounded-md3-md bg-surface/50 border border-outline/20 text-on-surface font-mono text-sm focus:border-primary outline-none transition-colors resize-none"
-                placeholder="your_message..."
+                className="w-full px-4 py-3 rounded-md3-md bg-surface border border-outline text-on-surface text-sm focus:border-primary outline-none transition-colors resize-none"
+                placeholder="Your message..."
               />
             </div>
-            <button type="submit" className="md3-button-filled w-full sm:w-auto">
+            <button type="submit" className="btn-filled w-full sm:w-auto">
               {sent ? (
                 <span className="flex items-center gap-2">
-                  <span className="text-terminal-green">✓</span> sent
+                  <span className="text-success">✓</span> Message Sent
                 </span>
               ) : (
-                <span className="flex items-center gap-2">
-                  <span className="text-on-primary">$</span> send_message
-                </span>
+                "Send Message"
               )}
             </button>
           </form>

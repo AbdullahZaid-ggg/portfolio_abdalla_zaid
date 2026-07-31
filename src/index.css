@@ -3,20 +3,51 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 244 244 248;
+    --surface: 255 255 255;
+    --surface-elevated: 250 250 253;
+    --surface-variant: 229 229 238;
+    --on-surface: 24 24 29;
+    --on-surface-variant: 87 87 102;
+    --outline: 212 212 224;
+    --primary: 99 102 241;
+    --primary-strong: 67 56 202;
+    --secondary: 8 145 178;
+    --tertiary: 124 58 237;
+    --success: 5 150 105;
+  }
+
+  .dark {
+    --background: 10 10 15;
+    --surface: 19 19 24;
+    --surface-elevated: 26 26 33;
+    --surface-variant: 34 34 43;
+    --on-surface: 244 244 245;
+    --on-surface-variant: 157 157 170;
+    --outline: 44 44 53;
+    --primary: 99 102 241;
+    --primary-strong: 129 140 248;
+    --secondary: 34 211 238;
+    --tertiary: 167 139 250;
+    --success: 52 211 153;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-on-background font-mono antialiased;
+    @apply bg-background text-on-surface font-sans antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   ::selection {
-    @apply bg-primary/30 text-neon-cyan;
+    @apply bg-primary/40 text-white;
   }
 
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
   }
   ::-webkit-scrollbar-track {
     @apply bg-background;
@@ -27,74 +58,70 @@
 }
 
 @layer components {
-  .md3-surface {
-    @apply bg-surface text-on-surface rounded-md3-md shadow-md3-1;
-  }
-
-  .md3-surface-elevated {
-    @apply bg-surface text-on-surface rounded-md3-md shadow-md3-2;
-  }
-
-  .md3-card {
-    @apply bg-surface/80 backdrop-blur-sm text-on-surface rounded-md3-lg shadow-md3-2 border border-outline/20 transition-all duration-300;
-  }
-
-  .md3-card:hover {
-    @apply shadow-glow border-primary/30;
-  }
-
-  .md3-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-md3-lg px-6 py-3 font-mono text-sm tracking-wide transition-all duration-200;
-  }
-
-  .md3-button-filled {
-    @apply md3-button bg-primary text-on-primary shadow-md3-1 hover:shadow-glow hover:bg-primary/90 active:shadow-md3-1;
-  }
-
-  .md3-button-outlined {
-    @apply md3-button border-2 border-primary/50 text-primary bg-transparent hover:bg-primary/10 hover:border-primary;
-  }
-
-  .md3-button-text {
-    @apply md3-button text-primary bg-transparent hover:bg-primary/10;
-  }
-
-  .md3-chip {
-    @apply inline-flex items-center gap-2 rounded-md3-sm px-3 py-1.5 text-xs font-mono bg-surface-variant text-on-surface-variant border border-outline/20;
-  }
-
   .section-heading {
-    @apply text-3xl md:text-4xl font-mono font-bold text-primary mb-2;
+    @apply text-3xl md:text-4xl font-bold text-on-surface mb-2;
   }
 
   .section-subheading {
-    @apply text-lg text-on-surface-variant font-mono mb-8;
+    @apply text-lg text-on-surface-variant mb-8;
   }
 
   .section-padding {
     @apply px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24;
   }
 
-  .terminal-window {
-    @apply bg-[#0a0d14] border border-outline/30 rounded-md3-md overflow-hidden shadow-md3-2;
+  .card {
+    @apply bg-surface border border-outline rounded-md3-lg transition-all duration-300;
   }
 
-  .terminal-header {
-    @apply flex items-center gap-2 px-4 py-2.5 bg-[#0f1219] border-b border-outline/20;
+  .card-hover {
+    @apply card hover:-translate-y-1 hover:border-primary/60 hover:shadow-glow;
   }
 
-  .terminal-dot {
-    @apply w-3 h-3 rounded-full;
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md3-md px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-200;
   }
 
-  .glow-text {
-    text-shadow: 0 0 10px rgba(0, 212, 170, 0.5);
+  .btn-filled {
+    @apply btn bg-primary text-white shadow-glow hover:bg-primary-strong active:scale-[0.98];
+  }
+
+  .btn-outlined {
+    @apply btn border-2 border-primary/40 text-primary-strong bg-transparent hover:bg-primary/10 hover:border-primary;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-md3-sm px-3 py-1.5 text-xs font-medium bg-surface-variant text-on-surface-variant border border-outline;
+  }
+
+  .section-label {
+    @apply flex items-center gap-3 text-sm font-mono text-primary-strong uppercase tracking-widest mb-6;
+  }
+
+  .section-label::after {
+    content: '';
+    @apply h-px w-16 md:w-24 bg-gradient-to-r from-primary to-transparent;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-strong via-tertiary to-secondary bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: gradientX 6s ease infinite;
+  }
+
+  @keyframes gradientX {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 
   .grid-bg {
     background-image:
-      linear-gradient(rgba(0, 212, 170, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+      linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .glow-orb {
+    @apply absolute rounded-full blur-3xl pointer-events-none;
   }
 }

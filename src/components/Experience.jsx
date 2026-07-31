@@ -1,52 +1,73 @@
 import portfolioData from "../data/portfolioData";
+import Reveal from "./Reveal";
 
 export default function Experience() {
-  const { experience } = portfolioData;
+  const { experience, achievements } = portfolioData;
 
   return (
     <section id="experience" className="section-padding py-20 md:py-28 relative">
-      <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
       <div className="max-w-4xl mx-auto relative z-10">
-        <h2 className="section-heading">
-          <span className="text-terminal-green">$ </span>experience
-        </h2>
-        <p className="section-subheading">
-          <span className="text-on-surface-variant">// </span>الخبرات
-        </p>
+        <Reveal>
+          <div className="section-label">04. Experience</div>
+        </Reveal>
 
         <div className="space-y-6">
           {experience.map((exp, i) => (
-            <div key={i} className="md3-card p-6 md:p-8 relative pl-10 md:pl-12 border-l-2 border-l-primary/30 hover:border-l-primary transition-all">
-              <div className="absolute left-[-5px] md:left-[-5px] top-8 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_8px_rgba(0,212,170,0.5)]" />
-              {i < experience.length - 1 && (
-                <div className="absolute left-[2px] md:left-[2px] top-11 bottom-0 w-px bg-outline/20" />
-              )}
-
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
+            <Reveal key={i} delay={i * 100}>
+              <div className="card-hover p-6 md:p-8">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-4">
                 <div>
-                  <h3 className="text-base font-mono font-semibold text-on-surface">
-                    <span className="text-primary">&gt;</span> {exp.role}
-                  </h3>
-                  <p className="text-primary/80 font-mono text-sm">
-                    {exp.company} &middot; {exp.location}
+                  <h3 className="text-lg font-bold text-on-surface">{exp.role}</h3>
+                  <p className="text-primary-strong font-medium">
+                    {exp.company} · {exp.location}
                   </p>
                 </div>
-                <span className="text-xs text-on-surface-variant font-mono whitespace-nowrap border border-outline/20 px-2 py-0.5 rounded-md3-xs">
+                <span className="text-xs font-mono text-on-surface-variant whitespace-nowrap chip">
                   {exp.period}
                 </span>
               </div>
 
               <ul className="space-y-2">
                 {exp.highlights.map((h, j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm text-on-surface-variant font-mono">
-                    <span className="text-terminal-green mt-1 shrink-0">▹</span>
+                  <li key={j} className="flex items-start gap-2 text-sm text-on-surface-variant leading-relaxed">
+                    <span className="text-secondary mt-1.5 shrink-0">▸</span>
                     {h}
                   </li>
                 ))}
               </ul>
-            </div>
+              </div>
+            </Reveal>
           ))}
         </div>
+
+        {achievements && achievements.length > 0 && (
+          <div className="mt-16 space-y-5">
+            <Reveal>
+              <h3 className="text-sm font-mono text-primary-strong uppercase tracking-widest">
+                Achievements
+              </h3>
+            </Reveal>
+            <div className="relative pl-6 space-y-6 before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-px before:bg-outline">
+              {achievements.map((a, i) => (
+                <Reveal key={i} delay={i * 100}>
+                  <div className="relative">
+                    <span className="absolute -left-6 top-1.5 w-[15px] h-[15px] rounded-full bg-secondary border-[3px] border-background" />
+                    <div className="card p-5 hover:border-primary/60 transition-colors">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1.5">
+                        <p className="font-semibold text-on-surface">{a.title}</p>
+                        <span className="text-xs text-primary-strong font-mono whitespace-nowrap">
+                          {a.period}
+                        </span>
+                      </div>
+                      <p className="text-sm text-on-surface-variant">{a.description}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
