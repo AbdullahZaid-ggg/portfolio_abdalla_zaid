@@ -57,7 +57,7 @@ const portfolioData = {
       titleAr: "Z-Fahm",
       description: "تطبيق ويب تفاعلي كامل لإنشاء وحل الاختبارات القصيرة، مبني من الصفر باستخدام React. اختبر معرفتك عبر 12 فئة مع 98 سؤالاً محلياً، أو اجلب أسئلة من Open Trivia Database API. تتبع كل محاولة، قارن أداءك يوماً بيوم، ابنِ سلاسل انتصارات، واحتفل بالنتائج العالية مع confetti.",
       descriptionEn: "A full-featured interactive quiz game built from scratch with React. Test your knowledge across 12 categories with 98 local questions, or fetch fresh questions from the Open Trivia Database API. Track every attempt, compare your performance day by day, build streaks, and celebrate high scores with confetti.",
-      image: "https://picsum.photos/seed/zfahm/600/400",
+      image: "https://raw.githubusercontent.com/AbdullahZaid-ggg/abdalla-preTech-graduate/temp-branch/public/assets/images/start-quiz.svg",
       builtWithAI: true,
       tags: ["React 19", "Vite 8", "React Router 6", "html2canvas", "CSS Custom Properties", "Web Audio API", "Canvas API", "Context + useReducer", "PWA", "Service Worker", "Open Trivia DB API", "Vitest", "Testing Library", "ESLint"],
       features: [
@@ -80,7 +80,7 @@ const portfolioData = {
       titleAr: "تطوع65x",
       description: "منصة تفاعلية لكل من يريد التطوع في منطقة وادي عارة، تم تطويرها كجزء من برنامج مسار (Masar). تهدف إلى ربط المتطوعين بمراكز التطوع والفرص التطوعية. توفر قاعدة بيانات محدثة لأكثر من 48 مركزاً تطوعياً مع البحث والتصفية حسب المنطقة والفئة، خريطة تفاعلية، المفضلة، وصفحة فعاليات.",
       descriptionEn: "An interactive volunteer platform developed as part of the Masar program, connecting volunteers with 48+ volunteer centers in the Wadi Ara region. Features include search and filter by region/category, interactive map (Leaflet + OpenStreetMap), bookmarks, events page, and a fully bilingual Arabic/Hebrew interface.",
-      image: "https://picsum.photos/seed/tatawo3/600/400",
+      image: "https://raw.githubusercontent.com/AbdullahZaid-ggg/MasarEndProgram2526/master/public/logo512.png",
       builtWithAI: true,
       tags: ["React", "Vite", "React Router 6", "Leaflet", "OpenStreetMap", "localStorage", "RTL", "CSS3", "PWA"],
       features: [
@@ -100,7 +100,7 @@ const portfolioData = {
       titleAr: "Z-Task Manager CLI",
       description: "مدير مهام طرفية كامل مكتوب بلغة C. يسمح بإضافة وتعديل وحذف المهام، عرض القائمة في جدول ملوّن، البحث بكلمة مفتاحية، والتحقق من حالة كل مهمة. يحفظ جميع المهام تلقائياً في ملف JSON، ويعمل على أنظمة Windows وLinux مع دعم كامل للألوان والترميز العربي (UTF-8).",
       descriptionEn: "A full-featured terminal task manager written in C. Add, edit, and remove tasks, view your list in a color-coded table, search by keyword, and check each task's status. All tasks persist automatically to a JSON file, with full ANSI colors and UTF-8 support across Windows and Linux.",
-      image: "https://picsum.photos/seed/ztaskscli/600/400",
+      image: "https://placehold.co/600x400/0d1117/38bdf8?text=Z-Task+Manager+CLI",
       tags: ["C", "CLI", "JSON", "ANSI Colors", "Cross-Platform", "File I/O", "Dynamic Memory", "UTF-8"],
       features: [
         "Add, edit, and remove tasks with auto-incremented IDs",
@@ -114,11 +114,62 @@ const portfolioData = {
       repoUrl: "https://github.com/AbdullahZaid-ggg/Z_Tasks_Manager_CLI",
     },
     {
+      title: "Z-LIB — Royal Edition",
+      titleAr: "مكتبة Z الذهبية",
+      description: "نظام إدارة مكتبة يعمل بالكامل في الطرفية مبني بلغة C++17 مع واجهة TUI حديثة ملوّنة (ذهبي ملكي وأزرق داكن)، تنقّل كامل بلوحة الأسهم، محرك حفظ JSON مدمج بدون مكتبات خارجية، بحث فوري متعدد الحقول، ولوحة إحصائيات ديناميكية.",
+      descriptionEn: "A modern, high-performance terminal-based library management system written in C++17 with a fully interactive TUI — royal gold & navy blue 256-color ANSI theme, arrow-key navigation, a built-in zero-dependency JSON persistence engine, real-time multi-field keyword search, and a live analytics dashboard.",
+      image: "https://placehold.co/600x400/0d1117/38bdf8?text=Z-LIB",
+      tags: ["C++", "C++17", "CLI", "TUI", "JSON", "ANSI Colors", "Windows Console", "Keyboard Navigation"],
+      features: [
+        "Royal gold & navy blue 256-color ANSI TUI with dynamic focus highlights",
+        "Full keyboard navigation — arrow keys, ENTER to execute, ESC to exit",
+        "Built-in pretty-printed JSON persistence engine with zero external libraries",
+        "Real-time multi-field search across titles, authors, and genres",
+        "Dynamic dashboard with total records, available inventory, and checked-out books",
+        "Robust input validation against stream pollution and type-mismatch crashes",
+      ],
+      repoUrl: "https://github.com/AbdullahZaid-ggg/Z-LIB",
+    },
+    {
+      title: "Graduation Robot Car ESP32",
+      titleAr: "سيارة الروبوت الذكية — مشروع التخرج",
+      description: "روبوت ذكي مدمج مبني على ESP32 كجزء من مشروع التخرج: سيارة يتم التحكم بها لاسلكياً من المتصفح عبر WebSockets، نظام مراقبة حرارة ورطوبة (DHT11) مع إنذارات صوتية ومؤشر RGB، شاشة LCD I2C للقراءات الحية، ولوحة تحكم بتصميم زجاجي حديث.",
+      descriptionEn: "A fully integrated ESP32 smart robot built as a school graduation project — a Wi-Fi-controlled robot car driven from any browser via WebSockets, a DHT11 temperature & humidity monitoring system with buzzer/speaker alarms and RGB indicators, a live I2C 16x2 LCD display, and a clean glassmorphism web dashboard.",
+      image: "https://placehold.co/600x400/0d1117/38bdf8?text=Robot+Car+ESP32",
+      tags: ["C++", "ESP32", "Arduino", "WebSockets", "DHT11", "PCF8574", "I2C LCD", "IoT"],
+      features: [
+        "Real-time Wi-Fi robot control via WebSockets with instant response",
+        "Keyboard support — arrow keys and spacebar work directly in the browser",
+        "DHT11 environment monitoring with automatic buzzer/speaker alarms and RGB LED status",
+        "Live I2C 16x2 LCD showing temperature, humidity, and OK/HIGH/LOW status",
+        "PCF8574 I/O expander drives motors and direction LEDs through just 2 wires",
+        "Responsive glassmorphism control panel that works on any screen size",
+      ],
+      repoUrl: "https://github.com/AbdullahZaid-ggg/My-School-Graduation-Project",
+    },
+    {
+      title: "How to Solve a Rubik's Cube",
+      titleAr: "كيف تحل مكعب روبيك",
+      description: "موقع تعليمي تفاعلي ثنائي اللغة (عربي/إنجليزي) يشرح حل مكعب روبيك للمبتدئين بطريقة طبقة-طبقة (LBL) في 7 خطوات، مع محاكي مكعب ثلاثي الأبعاد حي مبني بـ Three.js يمكنك تدويره وتدوير أوجهه ومزجه وإعادة ترتيبه مباشرة في المتصفح.",
+      descriptionEn: "An interactive bilingual (English/Arabic) web tutorial that teaches beginners how to solve a Rubik's Cube using the Layer-by-Layer (LBL) method across 7 steps — complete with a live 3D cube simulator rendered in Three.js where you can rotate the camera, turn any face, scramble, and reset the cube right in the browser.",
+      image: "https://placehold.co/600x400/0d1117/38bdf8?text=Rubik's+Cube+Tutorial",
+      tags: ["HTML5", "CSS3", "JavaScript", "Three.js", "Bootstrap 5", "RTL", "3D"],
+      features: [
+        "Complete 7-step LBL tutorial — from the white cross to orienting yellow corners",
+        "Interactive 3D cube built with Three.js; orbit camera, turn any face, watch moves in real time",
+        "Scramble and reset the cube to practice as much as you like",
+        "Full Arabic (RTL) and English translations with a one-click toggle",
+        "Accordion layout to focus on one step at a time",
+        "Algorithms, goals, tips, and common mistakes for every step",
+      ],
+      repoUrl: "https://github.com/AbdullahZaid-ggg/TeachingHowToSolveRubikCube",
+    },
+    {
       title: "Abdalla Zaid Portfolio",
       titleAr: "معرض أعمال عبد الله زيد",
       description: "هذا الموقع الذي تتصفحه الآن — معرض أعمال شخصي بتصميم تقني عصري داكن وأنيق: تدرجات لونية نيون، بطاقات بظلال ناعمة، وتصميم متجاوب بالكامل. مبني بـ React وVite وTailwind مع محتوى عربي/إنجليزي.",
       descriptionEn: "The site you're viewing right now — a personal portfolio with a sleek modern tech design: subtle gradient accents, soft-shadowed cards, and a fully responsive layout. Built with React + Vite + Tailwind, with Arabic/English content.",
-      image: "https://picsum.photos/seed/portfoliocard/600/400",
+      image: "https://placehold.co/600x400/0d1117/38bdf8?text=Portfolio",
       builtWithAI: true,
       tags: ["React", "Vite", "Tailwind CSS", "JavaScript", "CSS3", "Responsive", "RTL"],
       features: [
@@ -134,7 +185,7 @@ const portfolioData = {
       titleAr: "مايكرو شات ESP32",
       description: "غرفة دردشة نصية حقيقية اللحظة تعمل بالكامل على شريحة ESP32. يتصل أي جهاز في نفس شبكة Wi-Fi عبر فتح عنوان IP المحلي في المتصفح، مع اسم مستخدم واسم الجهاز لكل رسالة، وحفظ السجل في المتصفح. يعمل بدون إنترنت نهائياً.",
       descriptionEn: "A real-time text chatroom hosted entirely on an ESP32. Any device on the same local Wi-Fi network joins by opening the ESP32's IP in a browser — with username and device IP shown per message, and chat history saved in the browser. Works fully offline.",
-      image: "https://picsum.photos/seed/microchat/600/400",
+      image: "https://placehold.co/600x400/0d1117/38bdf8?text=MicroChat+ESP32",
       builtWithAI: true,
       tags: ["C++", "ESP32", "PlatformIO", "WebSockets", "ESPAsyncWebServer", "Arduino", "localStorage"],
       features: [
@@ -151,7 +202,7 @@ const portfolioData = {
       titleAr: "نظام تشغيل طرفية مصغّر ESP32",
       description: "نظام تشغيل طرفية مصغّر وخفيف يعمل من الصفر على ESP32 عبر المنفذ التسلسلي فقط، بدون أي شاشة LCD. يشمل 10 أوامر مدمجة (pwd, ls, nano, cat, rm, free وغيرها)، محرر نصوص صغير، توليد لافتات ASCII أفقية، ونظام ملفات افتراضي على LittleFS مع دعم إعادة التوجيه > و >>.",
       descriptionEn: "An ultra-lightweight terminal OS built from scratch for ESP32, running purely over Serial — no LCD needed. Includes 10 built-in shell commands (pwd, ls, nano, cat, rm, free, and more), an embedded nano-style text editor, horizontal ASCII art banners, and a virtual file system on LittleFS with > and >> redirection.",
-      image: "https://picsum.photos/seed/smallcomputer/600/400",
+      image: "https://placehold.co/600x400/0d1117/38bdf8?text=ESP32+Mini+Terminal+OS",
       builtWithAI: true,
       tags: ["C++", "ESP32", "PlatformIO", "LittleFS", "CLI", "Arduino", "VFS"],
       features: [
@@ -169,7 +220,7 @@ const portfolioData = {
       titleAr: "لعبة الثعبان على عتاد ESP32",
       description: "لعبة الثعبان الكلاسيكية تُعرض بالكامل على عتاد حقيقي — مصفوفة LEDs بحجم 8×8 (MAX7219) موصولة بـ ESP32. التحكم فوري من لوحة المفاتيح (WASD) دون الحاجة للضغط على Enter، مع إمكانية عبور الجدران وهندسة غير حاجبة تعتمد على millis().",
       descriptionEn: "The classic Snake game rendered entirely on physical hardware — an 8x8 LED matrix (MAX7219) driven by an ESP32. Instant keyboard controls (WASD) with no Enter key needed, wall-wrapping mechanics, and a fully non-blocking millis()-based architecture.",
-      image: "https://picsum.photos/seed/snakegame/600/400",
+      image: "https://placehold.co/600x400/0d1117/38bdf8?text=Snake+Game+ESP32",
       builtWithAI: true,
       tags: ["C++", "ESP32", "MAX7219", "LED Matrix", "PlatformIO", "Arduino"],
       features: [
@@ -186,7 +237,7 @@ const portfolioData = {
       titleAr: "ادرس منيح",
       description: "تطبيق ويب عربي لتنظيم الوقت ومتابعة الدراسة. يساعد الطلاب على إدارة المواد الدراسية، تتبع جلسات الدراسة بمؤقت بومودورو مرتبط بالمواد، متابعة التقدم يومياً وأسبوعياً وشهرياً وسنوياً، مع تحليلات حية ووضع ليلي. البيانات تُحفظ محلياً عبر IndexedDB.",
       descriptionEn: "An Arabic study-organizer web app that helps students track study sessions, manage subjects, and analyze progress. Includes a Pomodoro timer linked to subjects, daily/weekly/monthly/yearly progress tracking, live analytics, and dark mode — with all data stored locally via IndexedDB.",
-      image: "https://picsum.photos/seed/udrusmni7/600/400",
+      image: "https://placehold.co/600x400/0d1117/38bdf8?text=UdruS+Mni7",
       builtWithAI: true,
       tags: ["React", "Dexie.js", "IndexedDB", "CSS Variables", "JavaScript", "Pomodoro"],
       features: [
@@ -205,7 +256,7 @@ const portfolioData = {
       titleAr: "مؤقت Z برو",
       description: "تطبيق مؤقت بومودورو احترافي يدعم ثلاث لغات: العربية، العبرية، والإنجليزية. مؤقت قابل للتخصيص مع تبديل تلقائي بين جلسات التركيز والاستراحة، صفحة تحليلات بثلاثة أنواع من الرسوم البيانية، سجل جلسات كامل، تصميم زجاجي داكن متوهج، وحفظ البيانات في localStorage.",
       descriptionEn: "A professional Pomodoro timer available in three languages: Arabic, Hebrew, and English. Customizable timer with automatic focus/break switching, an analytics page with three chart types, a full session log, glowing dark glassmorphism design, and localStorage persistence.",
-      image: "https://picsum.photos/seed/ztimer/600/400",
+      image: "https://placehold.co/600x400/0d1117/38bdf8?text=Z-Timer+Pro",
       builtWithAI: true,
       tags: ["HTML5", "CSS3", "JavaScript", "Chart.js", "localStorage", "ES6 Modules", "PWA", "RTL"],
       features: [
@@ -291,6 +342,22 @@ const portfolioData = {
   },
 
   blogPosts: [
+    {
+      title: "Z-LIB: A Library Manager That Lives in the Terminal",
+      date: "Aug 2026",
+      readTime: "6 min read",
+      excerpt:
+        "A full library management system in C++17 with zero dependencies — royal gold & navy 256-color TUI, arrow-key navigation, and a hand-rolled JSON engine.",
+      tags: ["C++", "C++17", "CLI", "TUI", "JSON", "ANSI Colors"],
+      content: [
+        "Libraries are built to hold books — but managing a catalog usually drags you into a web app with a database and a login. I wanted the opposite: a manager that starts instantly, stores everything in a single pretty-printed JSON file, and feels like a modern console tool. That's how Z-LIB was born.",
+        "The interface is a full TUI driven entirely by arrow keys — up and down to select, ENTER to execute, ESC to go back. No tedious numeric menus. I modeled it after tools like lazygit and archinstall because keyboard-first navigation is faster and more satisfying than any menu prompt.",
+        "The visual system is a royal gold & navy blue theme built on 256-color ANSI escapes: crisp Unicode box-drawing borders, a cyan-tinted header, dynamic focus highlights, and status badges that turn red for issued books and blue for available ones.",
+        "The hardest part was persistence. Instead of pulling in nlohmann/json, I wrote a small JSON engine by hand — reading and writing structured data with proper escaping and pretty-printing. It keeps the whole program dependency-free and tiny.",
+        "Beyond CRUD there's a real-time search across titles, authors, and genres, plus a live dashboard computing total records, available inventory, and checked-out books. And because console input is a minefield, I added robust stream-pollution protection so a stray character can't crash the app.",
+        "Writing Z-LIB taught me that a great terminal tool is 20% functionality and 80% polish — the color system, the key handling, and the error resilience are what make it feel like a real product instead of a school exercise.",
+      ],
+    },
     {
       title: "Building a Terminal Task Manager in C",
       date: "Jan 2026",

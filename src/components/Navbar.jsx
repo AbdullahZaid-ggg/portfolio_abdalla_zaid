@@ -57,7 +57,7 @@ export default function Navbar() {
   }, []);
 
   const navLinkClass = ({ isActive }) =>
-    `relative flex flex-col items-center gap-1 px-3 py-2 rounded-md3-md text-xs font-medium transition-all ${
+    `relative flex items-center gap-1 px-3 py-2 rounded-md3-md text-xs font-medium transition-all ${
       isActive
         ? "text-primary-strong bg-primary/10"
         : "text-on-surface-variant hover:text-on-surface hover:bg-surface-variant"
@@ -85,11 +85,9 @@ export default function Navbar() {
               className={navLinkClass}
               aria-label={item.label}
             >
-              <span className="group/nav relative">
+              <span className="flex items-center gap-1.5">
                 {icons[item.label]}
-                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap px-2 py-1 rounded-md3-xs bg-surface-elevated border border-outline text-[10px] text-on-surface opacity-0 group-hover/nav:opacity-100 transition-opacity pointer-events-none">
-                  {item.label}
-                </span>
+                <span>{item.label}</span>
               </span>
             </NavLink>
           ))}
