@@ -1,0 +1,56 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#0e1018"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+
+  <text x="600" y="90" text-anchor="middle" font-family="Consolas, monospace" font-size="34" fill="#22d3ee" filter="url(#glow)">ROBOT CAR CONTROL</text>
+  <text x="600" y="125" text-anchor="middle" font-family="Consolas, monospace" font-size="18" fill="#64748b">ESP32 Â· WebSockets Â· browser dashboard</text>
+
+  <rect x="70" y="160" width="520" height="440" rx="14" fill="#111118" stroke="#22d3ee" stroke-opacity="0.4"/>
+  <text x="330" y="210" text-anchor="middle" font-family="Consolas, monospace" font-size="20" fill="#e2e8f0">LIVE TELEMETRY</text>
+  <g font-family="Consolas, monospace" font-size="18">
+    <text x="100" y="265" fill="#94a3b8">TEMPERATURE</text>
+    <text x="380" y="265" fill="#22d3ee">24.5 Â°C</text>
+    <text x="100" y="315" fill="#94a3b8">HUMIDITY</text>
+    <text x="380" y="315" fill="#22d3ee">61%</text>
+    <text x="100" y="365" fill="#94a3b8">STATUS</text>
+    <circle cx="390" cy="360" r="7" fill="#22c55e"/>
+    <text x="410" y="365" fill="#4ade80">OK</text>
+    <text x="100" y="415" fill="#94a3b8">DIRECTION</text>
+    <text x="380" y="415" fill="#facc15">FORWARD</text>
+    <text x="100" y="465" fill="#94a3b8">WIFI</text>
+    <text x="380" y="465" fill="#22d3ee">connected</text>
+  </g>
+
+  <rect x="620" y="160" width="510" height="440" rx="14" fill="#111118" stroke="#7c3aed" stroke-opacity="0.4"/>
+  <text x="875" y="210" text-anchor="middle" font-family="Consolas, monospace" font-size="20" fill="#e2e8f0">CONTROL PANEL</text>
+
+  <g font-family="Consolas, monospace">
+    <rect x="780" y="250" width="180" height="60" rx="10" fill="#7c3aed" stroke="#a78bfa"/>
+    <text x="870" y="287" text-anchor="middle" font-size="20" fill="#ffffff">â² FORWARD</text>
+    <rect x="660" y="330" width="180" height="60" rx="10" fill="#131318" stroke="#4b5563"/>
+    <text x="750" y="367" text-anchor="middle" font-size="20" fill="#94a3b8">â LEFT</text>
+    <rect x="900" y="330" width="180" height="60" rx="10" fill="#131318" stroke="#4b5563"/>
+    <text x="990" y="367" text-anchor="middle" font-size="20" fill="#94a3b8">RIGHT â¶</text>
+    <rect x="780" y="410" width="180" height="60" rx="10" fill="#131318" stroke="#4b5563"/>
+    <text x="870" y="447" text-anchor="middle" font-size="20" fill="#94a3b8">â¼ BACK</text>
+    <text x="875" y="520" text-anchor="middle" font-size="16" fill="#64748b">arrow keys Â· spacebar = stop</text>
+    <text x="875" y="555" text-anchor="middle" font-size="16" fill="#64748b">also on the LCD 16x2 display</text>
+  </g>
+
+  <rect x="0" y="610" width="1200" height="4" fill="#22d3ee" opacity="0.4"/>
+  <text x="600" y="670" text-anchor="middle" font-family="Consolas, monospace" font-size="26" fill="#e2e8f0">C++  Â·  ESP32  Â·  WebSockets  Â·  DHT11</text>
+  <text x="600" y="710" text-anchor="middle" font-family="Consolas, monospace" font-size="18" fill="#64748b">IoT robot car Â· live alarms Â· RGB status</text>
+</svg>
